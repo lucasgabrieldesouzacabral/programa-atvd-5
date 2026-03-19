@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { StyleSheet, Text, TextInput, View, Button, TouchableOpacity } from 'react-native';
 import { NavigationContainer, useRoute } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -21,12 +22,11 @@ function LoginScreen({ navigation }) {
   );
 }
 
-function ListaContatosScreen({ navigation }) {
-  const contacts = [
-    { id: '1', name: 'Maria Silva', email: 'maria.silva@example.com', telefone: '(11) 99999-0001' },
-    { id: '2', name: 'João Souza', email: 'joao.souza@example.com', telefone: '(11) 99999-0002' },
-  ];
+const API_BASE = 'http://localhost:3000';
 
+function ListaContatosScreen({ navigation }) {
+
+  
   return (
     <View style={styles.container}>
       <View style={styles.headerRow}>
@@ -45,7 +45,7 @@ function ListaContatosScreen({ navigation }) {
           style={styles.contactItem}
           onPress={() => navigation.navigate('DetalheContato', { contact: c })}
         >
-          <Text style={styles.contactName}>{c.name}</Text>
+          <Text style={styles.contactName}>{c.nome || c.name}</Text>
           <Text style={styles.contactText}>{c.email}</Text>
           <Text style={styles.contactText}>{c.telefone}</Text>
         </TouchableOpacity>
@@ -92,7 +92,7 @@ function CadastroContatoScreen({ navigation }) {
 
 function DetalheContatoScreen({ navigation, route }) {
   const contact = route?.params?.contact;
-  const [nome, setNome] = useState(contact?.name ?? '');
+  const [nome, setNome] = useState(contact?.nome ?? '');
   const [email, setEmail] = useState(contact?.email ?? '');
   const [telefone, setTelefone] = useState(contact?.telefone ?? '');
 

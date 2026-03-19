@@ -1,0 +1,21 @@
+{
+"Contato": [
+{
+"id": 1,
+"nome": "João Souza",
+"email": "joao.souza@example.com",
+"telefone": "(11) 99999-0002"
+}
+],
+
+"Cadastro": [
+{
+"id": 1,
+"nome": "",
+"email": "",
+"telefone":"",
+"cpf": "",
+"senha": ""
+}
+]
+}
