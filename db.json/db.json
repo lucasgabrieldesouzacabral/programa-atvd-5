@@ -1,7 +1,7 @@
 {
   "Contato": [
     {
-      "nome": "João Souza",
+      "nome": "João Souza2",
       "email": "joao.souza@example.com",
       "telefone": "(11) 99999-2026",
       "id": "1"
@@ -11,6 +11,12 @@
       "email": "lucasdesouza@gmail.com",
       "telefone": "1234",
       "id": "jrUmSU_R1Nk"
+    },
+    {
+      "nome": "werw",
+      "email": "wer",
+      "telefone": "werwe",
+      "id": "VeyOLXhR4No"
     }
   ],
   "Cadastro": [
@@ -28,6 +34,13 @@
       "email": "isaaceu@gmail.com",
       "senha": "1231215",
       "id": "e_mWnddTM0o"
+    },
+    {
+      "nome": "NIlson",
+      "cpf": "423423",
+      "email": "njr1466@gmail.com",
+      "senha": "123456",
+      "id": "c73log-r1rE"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

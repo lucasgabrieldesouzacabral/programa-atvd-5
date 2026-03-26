@@ -17,12 +17,12 @@ function LoginScreen({ navigation }) {
       Alert.alert('Atenção', 'Preencha email e senha');
       return;
     }
-    navigation.navigate('ListaContatos', { updated: true });
+    //navigation.navigate('ListaContatos', { updated: true });
     try {
-       const res = await axios.get(`${API_BASE}/Cadastro`, {
-         params: { email, senha },
-       });
-         if (res.data && res.data.length > 0) {
+       const res = await axios.get(`${API_BASE}/Cadastro?email=${email}`
+        
+       );
+         if (res.data.length > 0) {
          navigation.navigate('ListaContatos', { updated: true });
        } else {
          Alert.alert('Erro', 'Usuário ou senha inválidos');
