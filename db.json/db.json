@@ -1,21 +1,29 @@
 {
-"Contato": [
-{
-"id": 1,
-"nome": "João Souza",
-"email": "joao.souza@example.com",
-"telefone": "(11) 99999-0002"
-}
-],
-
-"Cadastro": [
-{
-"id": 1,
-"nome": "",
-"email": "",
-"telefone":"",
-"cpf": "",
-"senha": ""
-}
-]
+  "Contato": [
+    {
+      "id": "1",
+      "nome": "João Souza",
+      "email": "joao.souza@example.com",
+      "telefone": "(11) 99999-0002"
+    }
+  ],
+  "Cadastro": [
+    {
+      "id": "1",
+      "nome": "Lucas Oliveira",
+      "email": "lucas.oliveira@example.com",
+      "telefone": "(21) 98888-0001",
+      "cpf": "24.123.456",
+      "senha": "123456"
+    },
+    {
+      "nome": "Isaac",
+      "cpf": "219479012412",
+      "email": "isaaceu@gmail.com",
+      "senha": "1231215",
+      "id": "e_mWnddTM0o"
+    }
+   
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
