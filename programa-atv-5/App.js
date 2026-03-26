@@ -17,18 +17,19 @@ function LoginScreen({ navigation }) {
       Alert.alert('Atenção', 'Preencha email e senha');
       return;
     }
+    navigation.navigate('ListaContatos', { updated: true });
     try {
-      const res = await axios.get(`${API_BASE}/Cadastro`, {
-        params: { email, senha },
-      });
-      if (res.data && res.data.length > 0) {
-        navigation.navigate('ListaContatos', { updated: true });
-      } else {
-        Alert.alert('Erro', 'Usuário ou senha inválidos');
-      }
-    } catch (error) {
-      Alert.alert('Erro', 'Não foi possível conectar ao servidor');
-    }
+       const res = await axios.get(`${API_BASE}/Cadastro`, {
+         params: { email, senha },
+       });
+         if (res.data && res.data.length > 0) {
+         navigation.navigate('ListaContatos', { updated: true });
+       } else {
+         Alert.alert('Erro', 'Usuário ou senha inválidos');
+       }
+     } catch (error) {
+       Alert.alert('Erro', 'Não foi possível conectar ao servidor');
+     }
   };
 
   return (
