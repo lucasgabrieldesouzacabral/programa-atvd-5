@@ -34,7 +34,10 @@ function LoginScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>LOGIN</Text>
+      <View style={styles.loginHeader}>
+        <Ionicons name="person-circle" size={72} color="#4A7DFF" />
+        <Text style={styles.title}>LOGIN</Text>
+      </View>
       <TextInput style={styles.input} placeholder="Email" value={email} onChangeText={setEmail} autoCapitalize="none" />
       <TextInput style={styles.input} placeholder="Senha" value={senha} onChangeText={setSenha} secureTextEntry />
       <View style={styles.buttonGroup}>
@@ -96,9 +99,14 @@ function ListaContatosScreen({ navigation, route }) {
               style={styles.contactItem}
               onPress={() => navigation.navigate('DetalheContato', { contact: item })}
             >
-              <Text style={styles.contactName}>{item.nome}</Text>
-              <Text style={styles.contactText}>{item.email}</Text>
-              <Text style={styles.contactText}>{item.telefone}</Text>
+              <View style={styles.contactRow}>
+                <Ionicons name="person-circle" size={30} color="#4A7DFF" style={{ marginRight: 10 }} />
+                <View style={styles.contactInfo}>
+                  <Text style={styles.contactName}>{item.nome}</Text>
+                  <Text style={styles.contactText}>{item.email}</Text>
+                  <Text style={styles.contactText}>{item.telefone}</Text>
+                </View>
+              </View>
             </TouchableOpacity>
           )}
           ListEmptyComponent={<Text>Nenhum contato cadastrado.</Text>}
@@ -290,6 +298,17 @@ const styles = StyleSheet.create({
   contactText: {
     fontSize: 14,
     color: '#666',
+  },
+  contactRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  contactInfo: {
+    flex: 1,
+  },
+  loginHeader: {
+    alignItems: 'center',
+    marginBottom: 20,
   },
   headerRow: {
     width: '100%',
